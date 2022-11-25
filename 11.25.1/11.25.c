@@ -1,3 +1,4 @@
+
 #define _CRT_SECURE_NO_WARNINGS 1
 #include<stdio.h>
 
@@ -264,5 +265,97 @@ int(*parr3[10])[5];		//Êı×éÖ¸ÕëÊı×é£¬Êı×éÔªËØÊÇÊı×éÖ¸Õë(10¸öÊı×éÖ¸Õë)£¬Ã¿¸öÊı×éÖ
 //
 //
 //
+//    return 0;
+//}
+
+//----------------------------------------Á·Ï°10.5---------------------------------------------------
+
+//int test(int* arr, int n)
+//{
+//    int i = 0;
+//    int max = *arr;
+//    int min = *arr;
+//    for (i = 0; i < n; i++)
+//    {
+//        if (max < *(arr + i))
+//        {
+//            max = *(arr + i);
+//        }
+//        if (min > *(arr + i))
+//        {
+//            min = *(arr + i);
+//        }
+//    }
+//    return max - min;
+//
+//}
+//
+//int main()
+//{
+//    int arr[6] = { 1,2,3,4,5,10 };
+//    printf("%d\n", test(arr, 6));
+//    test(arr, 6);
+//    return 0;
+//}
+
+//--------------------------------------------Á·Ï°10.6-----------------------------------------------
+//µ¹ĞòÊı×é
+//void reverse(int* start, int* end)
+//{
+//    int tmp = 0;
+//    while (start < end)
+//    {
+//        tmp = *start;
+//        *start = *end;
+//        *end = tmp;
+//        start++;
+//        end--;
+//    }
+//}
+//
+//int main()
+//{
+//    int arr[6] = { 1,2,3,4,5,6 };
+//    reverse(arr, arr + 6 - 1);
+//    for (int i = 0; i < 6; i++)
+//    {
+//        printf("%d ", arr[i]);
+//    }
+//    printf("\n");
+//    return 0;
+//}
+//------------------------------------------Ã°ÅİÅÅĞò-----------------------------------------------
+//void sort(int *arr,int n)//ÓÉĞ¡µ½´ó
+//{
+//    int i = 0;
+//    int j = 0;
+//    int tmp = 0;
+// 
+// 
+//    int* start = arr;
+//    for (i = 0; i < n-1; i++)
+//    {
+//        arr = start;
+//        for (j = 0; j < n - i - 1; j++)
+//        {
+//            if (*arr > *(arr + 1))
+//            {
+//                tmp = *arr;
+//                *arr = *(arr + 1);
+//                *(arr + 1) = tmp;
+//            }
+//            arr++;
+//        }
+//    }
+//}
+//
+//int main()
+//{
+//    int arr[10] = { 10,9,8,7,6,5,4,3,2,1 };
+//    sort(arr,10);
+//    for (int i = 0; i < 10; i++)
+//    {
+//        printf("%d ", arr[i]);
+//    }
 //    return 0;
 //}
