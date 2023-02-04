@@ -117,7 +117,7 @@ void PopFront(SeqList* ps)
 	ps->sz--;
 }
 
-datatype SeqListFind(SeqList* ps, datatype num)
+datatype SeqListFind(SeqList* ps, datatype num, int pos)
 {
 	assert(ps);
 	assert(ps->sz > 0);
@@ -130,7 +130,7 @@ datatype SeqListFind(SeqList* ps, datatype num)
 			return i;
 		}
 	}
-	printf("nonexistence\n");
+	//printf("nonexistence\n");
 	return -1;
 }
 
@@ -139,7 +139,7 @@ void PosInsert(SeqList* ps, int pos, datatype num)
 	assert(ps);
 	assert(ps->sz > 0);
 
-	if (pos > ps->sz || pos <= 0)
+	if (pos >= ps->sz || pos < 0)
 	{
 		printf("越界\n");
 		return;
@@ -148,11 +148,11 @@ void PosInsert(SeqList* ps, int pos, datatype num)
 
 	//右移pos右边的数据（包含pos）
 	int i = 0;
-	for (i = 0; i < ps->sz - pos + 1; i++)
+	for (i = 0; i < ps->sz - pos; i++)
 	{
 		ps->data[ps->sz - i] = ps->data[ps->sz - i - 1];
 	}
-	ps->data[pos - 1] = num;
+	ps->data[pos] = num;
 	ps->sz++;
 }
 
@@ -161,7 +161,7 @@ void PosDelete(SeqList* ps, int pos)
 {
 	assert(ps);
 	assert(ps->sz > 0);
-	if (pos > ps->sz || pos <= 0)
+	if (pos >= ps->sz || pos < 0)
 	{
 		printf("越界\n");
 		return;
@@ -170,9 +170,9 @@ void PosDelete(SeqList* ps, int pos)
 	//删除pos位置的数字
 	//把后面的数据前移
 	int i = 0;
-	for (i = 0; i < ps->sz - pos; i++)
+	for (i = 0; i < ps->sz - pos - 1; i++)
 	{
-		ps->data[pos - 1 + i] = ps->data[pos + i];
+		ps->data[pos + i] = ps->data[pos + i + 1];
 	}
 	ps->sz--;
 }

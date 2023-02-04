@@ -33,7 +33,7 @@ void PushFront(SeqList* ps, datatype num);
 
 void PopFront(SeqList* ps);
 
-datatype SeqListFind(SeqList* ps, datatype num);
+datatype SeqListFind(SeqList* ps, datatype num, int pos);
 
 void PosInsert(SeqList* ps, int pos, datatype num);
 

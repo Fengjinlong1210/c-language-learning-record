@@ -86,8 +86,32 @@ void SeqListTest2()
 
 }
 
+void SeqListTest3()
+{
+	PushBack(&SL, 1);
+	PushBack(&SL, 2);
+	PushBack(&SL, 2);
+	PushBack(&SL, 1);
+	PushBack(&SL, 4);
+	PushBack(&SL, 4);
+	PushBack(&SL, 6);
+	PushBack(&SL, 2);
+	Print(&SL);
+	int pos = SeqListFind(&SL, 4, 0);
+	while (pos != -1)
+	{
+		PosDelete(&SL, pos);
+
+		pos = SeqListFind(&SL, 4, pos);
+	}
+
+	Print(&SL);
+
+}
+
+
 int main()
 {
-	SeqListTest2();
+	SeqListTest3();
 	return 0;
 }
