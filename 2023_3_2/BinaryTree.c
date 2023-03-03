@@ -76,7 +76,8 @@ void LevelTraverse(BTNode* root)
 	Qptr QL;
 	InitQueue(&QL);
 	QueuePush(&QL, root);
-	
+	int levelsize = 1;
+
 	//当队列不为空时
 	//取出最前面的结点数据后删除
 	//往队列中加入被删除结点的子结点
@@ -84,18 +85,23 @@ void LevelTraverse(BTNode* root)
 
 	while (!QueueEmpty(&QL))
 	{
-		BTNode* front = QueueFront(&QL);
-		printf("%c ", front->val);
-		QueuePop(&QL);
+		while (levelsize--)
+		{
+			BTNode* front = QueueFront(&QL);
+			printf("%c ", front->val);
+			QueuePop(&QL);
 
-		if (front->left)
-		{
-			QueuePush(&QL, front->left);
+			if (front->left)
+			{
+				QueuePush(&QL, front->left);
+			}
+			if (front->right)
+			{
+				QueuePush(&QL, front->right);
+			}
 		}
-		if (front->right)
-		{
-			QueuePush(&QL, front->right);
-		}
+		printf("\n");
+		levelsize = QueueSize(&QL);
 	}
 	QueueDestroy(&QL);
 }

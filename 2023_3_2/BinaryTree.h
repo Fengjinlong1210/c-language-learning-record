@@ -25,3 +25,6 @@ bool CompleteBinaryTree(BTNode* root);
 
 //二叉树的销毁
 void BinaryTreeDestory(BTNode* root);
+
+//分层遍历二叉树
+void TraverseByLevel(BTNode* root);
