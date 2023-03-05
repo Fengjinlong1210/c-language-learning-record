@@ -57,6 +57,7 @@ void SLPushBack(SLNode* phead, SLDataType val)
 		perror("PushBack malloc");
 		return;
 	}
+
 	//урн╡
 	while (cur->next)
 	{
