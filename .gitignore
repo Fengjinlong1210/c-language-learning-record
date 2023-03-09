@@ -32,3 +32,6 @@ Debug/
 # should NOT be excluded as they contain compiler settings and other important
 # information for Eclipse / Flash Builder.
 /通讯录latest/data.txt
+*.json
+*.plist
+newtest
