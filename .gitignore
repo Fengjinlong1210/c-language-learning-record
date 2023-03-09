@@ -26,6 +26,7 @@ Debug/
 .vs
 .json
 .plist
+.dSYM
 
 
 # Project files, i.e. `.project`, `.actionScriptProperties` and `.flexProperties`
@@ -35,3 +36,5 @@ Debug/
 *.json
 *.plist
 newtest
+*.
+add
