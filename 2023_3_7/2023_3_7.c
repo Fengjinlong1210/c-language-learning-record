@@ -51,7 +51,7 @@ double func2(int year, int capital, double rate)
 
 int main()
 {
-	int capital = 20000;
+	int capital = 0000;
 	float rate = 0.1;
 	int year = 10;
 	double ret = func2(year, capital, rate);
