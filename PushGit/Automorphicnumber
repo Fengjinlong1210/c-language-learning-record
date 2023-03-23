@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <math.h>
+
+
+int main() {
+    int n = 0;
+    while (~scanf("%d", &n)) {
+        int i = 0;
+        int count = 0;
+        long base = 10;
+        for (i = 0; i <= n; i++) {
+            long i2 = pow(i, 2);
+            if (i == base) {
+                base *= 10;
+            }
+            if (i2 % base == i) {
+                count++;
+            }
+        }
+        printf("%d", count);
+    }
+
+    return 0;
+}
