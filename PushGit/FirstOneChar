@@ -1,0 +1,22 @@
+int FirstNotRepeatingChar(char* str ) 
+{
+    //利用ASCII码，创建一个数组
+    int count[123] = {0};
+    //遍历字符串，在数组的相对位置上标记字符出现的次数
+    int lenth = strlen(str);
+    int i = 0;
+    for(i = 0; i<lenth; i++)
+    {
+        count[(str[i])+0]++;
+    }
+
+    //再次遍历字符串，如果字符相对数组的位置为1，就返回地址
+    for(i = 0; i<lenth; i++)
+    {
+        if(count[(str[i])+0] == 1)
+        {
+            return i;
+        }
+    }
+    return -1;
+}
