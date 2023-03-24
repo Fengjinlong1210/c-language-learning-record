@@ -1,0 +1,21 @@
+bool isUnique(char* astr)
+{
+    int lenth = strlen(astr);
+    int count[27] = {0};
+    int i = 0;
+    //遍历字符串，记录每个字符出现的次数
+    for(i = 0; i < lenth; i++)
+    {
+        count[(astr[i])-96]++;
+    }
+
+    //遍历数组，如果有大于1的元素，返回false
+    for(i = 0; i<27; i++)
+    {
+        if(count[i]>1)
+        {
+            return false;
+        }
+    }
+    return true;
+}
