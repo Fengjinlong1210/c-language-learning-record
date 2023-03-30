@@ -1,0 +1,24 @@
+char* replaceSpaces(char* S, int length)
+{
+    char* newS = (char*)malloc(sizeof(char) * (length * 3 + 1));
+    int i = 0;
+    char* cur = S;
+    while(length--)
+    {
+        if(*cur == ' ')
+        {
+            newS[i++] = '%';
+            newS[i++] = '2';
+            newS[i++] = '0';
+        }
+        else
+        {
+            newS[i++] = *cur;
+        }
+        cur++;
+    }   
+    S[i] = '\0';
+    memcpy(S, newS, i);
+    free(newS);
+    return S;
+}
